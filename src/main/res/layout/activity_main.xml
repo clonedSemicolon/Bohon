@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#F78C1D"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="24dp"
+        android:paddingTop="56dp"
+        android:paddingRight="24dp"
+        android:fitsSystemWindows="true">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="200dp"
+            android:layout_height="176dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:background="#F78C1D"
+            android:contentDescription="@null"
+            android:src="@drawable/custom" />
+
+        <EditText
+            android:id="@+id/Phone"
+            android:layout_width="352dp"
+            android:layout_height="50dp"
+            android:hint="@string/LoginPhoneText"
+            android:inputType="phone"
+
+            android:autofillHints="@string/autofillphone"
+            android:textAlignment="center"/>
+
+
+        <EditText
+            android:id="@+id/loginpassword"
+            android:layout_width="352dp"
+            android:layout_height="65dp"
+
+            android:hint="@string/passwordText"
+
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:autofillHints="@string/autofillphone" />
+
+        <Button
+            android:id="@+id/Loginbutton"
+            android:layout_width="212dp"
+            android:layout_height="61dp"
+            android:layout_marginHorizontal="0.4in"
+            android:layout_marginVertical="20sp"
+            android:background="#FF5722"
+            android:text="Login"
+            android:textColorLink="#D60101" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="110dp"
+            android:layout_marginVertical="20dp"
+            android:text="Not Registerd?"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/Signupbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="130dp"
+
+            android:background="#F78C1D"
+            android:text="@string/signup"
+            android:textColor="#D60101"/>
+
+
+    </LinearLayout>
+
+</ScrollView>

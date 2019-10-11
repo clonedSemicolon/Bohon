@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#F78C1D"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="24dp"
+        android:paddingTop="56dp"
+        android:paddingRight="24dp"
+        android:fitsSystemWindows="true">
+
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="268dp"
+            android:layout_height="104dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:background="#F78C1D"
+            android:contentDescription="@null"
+            android:src="@drawable/custom" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/Reg_Text"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="#D60101"
+            android:textSize="20dp"
+            >
+        </TextView>
+
+        <EditText
+            android:id="@+id/reg_name_text"
+            android:layout_width="352dp"
+            android:layout_height="60dp"
+            android:autofillHints="@string/autofillphone"
+            android:hint="@string/name"
+            android:inputType="text"
+            android:textAlignment="textStart" />
+
+        <EditText
+            android:id="@+id/reg_address"
+            android:layout_width="352dp"
+            android:layout_height="60dp"
+            android:autofillHints="@string/Address"
+            android:hint="@string/Address"
+            android:inputType="text"
+            android:textAlignment="textStart"
+            />
+
+        <EditText
+            android:id="@+id/reg_email"
+            android:layout_width="352dp"
+            android:layout_height="60dp"
+            android:autofillHints="@string/Email"
+            android:hint="@string/Email"
+            android:inputType="textEmailAddress"
+            android:textAlignment="textStart"
+            />
+
+        <EditText
+            android:id="@+id/reg_phone"
+            android:layout_width="352dp"
+            android:layout_height="60dp"
+            android:hint="@string/Phone"
+            android:inputType="phone"
+            android:autofillHints="@string/autofillphone"
+            android:textAlignment="textStart"
+            />
+
+        <EditText
+            android:id="@+id/reg_password"
+            android:layout_width="352dp"
+            android:layout_height="60dp"
+            android:hint="@string/passwordText"
+            android:inputType="textPassword"
+            android:textAlignment="textStart"
+            android:autofillHints="@string/autofillphone" />
+
+        <EditText
+            android:id="@+id/reg_confirm_password"
+            android:layout_width="352dp"
+            android:layout_height="60dp"
+            android:hint="@string/ConfirmPassword"
+            android:inputType="textPassword"
+            android:textAlignment="textStart"
+            android:autofillHints="@string/autofillphone" />
+
+        <Button
+            android:id="@+id/Loginbutton"
+            android:layout_width="212dp"
+            android:layout_height="80dp"
+            android:layout_marginHorizontal="0.4in"
+            android:layout_marginVertical="20sp"
+            android:background="#FF5722"
+            android:text="Register"
+            android:textColorLink="#D60101" />
+
+
+    </LinearLayout>
+
+</ScrollView>
