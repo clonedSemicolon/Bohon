@@ -3,7 +3,7 @@
     <string name="LoginPhoneText">Phone</string>
     <string name="passwordText">Password</string>
     <string name="autofillphone">AutoPhone</string>
-    <string name="signup">SignUp</string>
+    <string name="signup">SignUp Now</string>
     <string name="name">Name</string>
     <string name="Phone">Phone</string>
     <string name="Password">Password</string>
@@ -11,8 +11,6 @@
     <string name="Email">Email</string>
     <string name="Address">Address</string>
     <string name="Reg_Text">User Registration</string>
-
-
 
 
 </resources>
