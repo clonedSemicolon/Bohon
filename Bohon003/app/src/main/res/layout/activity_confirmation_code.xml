@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#F78C1D"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="24dp"
+        android:paddingTop="56dp"
+        android:paddingRight="24dp"
+        android:fitsSystemWindows="true">
+
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="200dp"
+            android:layout_height="151dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:background="#F78C1D"
+            android:contentDescription="@null"
+            android:src="@drawable/custom" />
+
+
+
+
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="263dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="55dp"
+            android:layout_marginVertical="0dp"
+            android:background="@layout/rounded_border_edittext"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="number"
+            android:hint="Confirmation Code">
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/ConfirmationCodeButton"
+            android:layout_width="199dp"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="0.5in"
+            android:layout_marginVertical="15sp"
+            android:background="#FF5722"
+            android:text="Confirm"
+            android:textColorLink="#D60101" />
+
+    </LinearLayout>
+
+
+
+
+
+
+</ScrollView>
