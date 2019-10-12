@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     private Button signupbutton;
+    private Button forgotpasswordbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,14 @@ public class MainActivity extends AppCompatActivity {
                 openRegistrationActivity();
             }
         });
+
+        forgotpasswordbutton=(Button) findViewById(R.id.ForgetPasswordButton);
+        forgotpasswordbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openForgetPasswordActivity();
+            }
+        });
     }
 
     public void openRegistrationActivity()
@@ -29,4 +38,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void openForgetPasswordActivity()
+    {
+        Intent intent1=new Intent(this,ForgetPasswordActivity.class);
+        startActivity(intent1);
+
+    }
 }
+
+
