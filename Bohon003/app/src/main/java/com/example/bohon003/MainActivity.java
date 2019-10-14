@@ -7,13 +7,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 public class MainActivity extends AppCompatActivity {
     private Button signupbutton;
-    private Button forgotpasswordbutton;
+    private Button forgotpasswordbutton,loginbutton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
         signupbutton=(Button) findViewById(R.id.Signupbutton);
         signupbutton.setOnClickListener(new View.OnClickListener() {
@@ -28,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openForgetPasswordActivity();
+            }
+        });
+
+        loginbutton=(Button)findViewById(R.id.Loginbutton);
+        loginbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openMapActivity();
             }
         });
     }
@@ -45,6 +58,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent1);
 
     }
+
+    public void openMapActivity()
+    {
+        Intent mapintent=new Intent(this,mapviewActivity.class);
+        startActivity(mapintent);
+    }
+
+    FirebaseDatabase database=FirebaseDatabase.getInstance();
 }
 
 
