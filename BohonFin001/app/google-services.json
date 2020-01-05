@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "501013755935",
+    "firebase_url": "https://bohonfinal001.firebaseio.com",
+    "project_id": "bohonfinal001",
+    "storage_bucket": "bohonfinal001.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501013755935:android:0cd052194dcbc0fa0e7d2a",
+        "android_client_info": {
+          "package_name": "com.example.bohon_final__001"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501013755935-3mjfo22i10k49a7b5nskt0vt04su330n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bohon_final__001",
+            "certificate_hash": "5768a36fd601430d25addcf100963f15ba978d9c"
+          }
+        },
+        {
+          "client_id": "501013755935-qn6611l9j006uaergpel3u6d9tga7j4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdjj6xu9cMxOK63XF14Sm6cfGGBZlfjuM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501013755935-qn6611l9j006uaergpel3u6d9tga7j4a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
