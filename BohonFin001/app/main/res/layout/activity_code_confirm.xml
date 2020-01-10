@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/relativeLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/confirmdesign"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/ConfirmCode"
+        android:layout_width="393dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="430dp"
+        android:background="@drawable/confirmedit"
+        android:inputType="textPassword"
+        android:hint=" "
+        android:textSize="30dp"
+        android:textAlignment="center"
+        />
+
+    <Button
+        android:id="@+id/ConfirmButton"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/confirmbutton"
+        android:gravity="center"
+        android:text=""
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</LinearLayout>

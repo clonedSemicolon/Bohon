@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Bohon_final__001</string>
+    <string name="user_location_permission_explanation"></string>
+    <string name="user_location_permission_not_granted"></string>
+    <string name="access_token">pk.eyJ1IjoiYXZpc2hhayIsImEiOiJjazE2NWtmeWUwaDhvM2hzNXYwMjZxa3lwIn0.KFTM_b6LencWq5rzQfbZAQ</string>
+    <string name="map_key">AIzaSyB_qsP8AOP_P0MdlPz-48TDaJYjTP3vbjo</string>
+    <string name="title_activity_current__location">Map</string>
+</resources>
