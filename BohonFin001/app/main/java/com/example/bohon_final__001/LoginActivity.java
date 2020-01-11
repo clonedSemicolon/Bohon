@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
         test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,Current_Location.class));
+                startActivity(new Intent(LoginActivity.this,SubmissionActivity.class));
             }
         });
 

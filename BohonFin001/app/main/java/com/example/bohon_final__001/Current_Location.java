@@ -98,5 +98,7 @@ public class Current_Location extends FragmentActivity implements OnMapReadyCall
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
+        map=googleMap;
+
     }
 }
