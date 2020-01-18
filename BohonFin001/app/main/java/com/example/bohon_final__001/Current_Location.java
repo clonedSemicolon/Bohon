@@ -2,6 +2,7 @@ package com.example.bohon_final__001;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
@@ -18,6 +19,8 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.Toast;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -42,6 +45,7 @@ public class Current_Location extends FragmentActivity implements OnMapReadyCall
     GoogleMap map;
     SupportMapFragment mapFragment;
     SearchView searchView;
+    Button locationconfirmbutton;
     private static final int REQUEST_CODE = 101;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +54,14 @@ public class Current_Location extends FragmentActivity implements OnMapReadyCall
 
         searchView=(SearchView)findViewById(R.id.search_location);
         mapFragment=(SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.Cmap);
+        locationconfirmbutton=(Button)findViewById(R.id.locationconfirmbutton);
 
+        locationconfirmbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Current_Location.this,SubmissionActivity.class));
+            }
+        });
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

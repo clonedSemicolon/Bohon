@@ -27,7 +27,7 @@ public class CodeConfirm extends AppCompatActivity {
     EditText Otpverify;
     int s;
     private String VerificationCode;
-    Button confirmbutton;
+    Button confirmbutton,test;
     private FirebaseAuth mAuth;
 
     @Override
@@ -36,6 +36,7 @@ public class CodeConfirm extends AppCompatActivity {
         setContentView(R.layout.activity_code_confirm);
 
         Otpverify = (EditText) findViewById(R.id.ConfirmCode);
+        test=(Button)findViewById(R.id.testbutton);
         mAuth= FirebaseAuth.getInstance();
         String PhoneNumber = getIntent().getStringExtra("PhoneNumber");
 
@@ -43,6 +44,13 @@ public class CodeConfirm extends AppCompatActivity {
         SendVerificationCode(PhoneNumber);
         
         confirmbutton=(Button)findViewById(R.id.ConfirmButton);
+
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CodeConfirm.this,SqlitemainActivity.class));
+            }
+        });
 
 
         
@@ -81,7 +89,7 @@ public class CodeConfirm extends AppCompatActivity {
 
                 if(task.isSuccessful())
                 {
-                    Intent WorkingSwitch=new Intent(CodeConfirm.this,MainActivity.class);
+                    Intent WorkingSwitch=new Intent(CodeConfirm.this,Current_Location.class);
                     WorkingSwitch.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(WorkingSwitch);
                 }

@@ -30,8 +30,8 @@ public class LoginActivity extends AppCompatActivity {
 
         LoginPhone = (EditText) findViewById(R.id.PhoneNumberLogin);
         LoginConfirmButton = (Button) findViewById(R.id.Loginbutton);
-        Button registerbutton=(Button)findViewById(R.id.buttontest);
-        Button test=(Button)findViewById(R.id.buttontest);
+        Button registerbutton=(Button)findViewById(R.id.RegisterButton);
+
 
         LoginConfirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,12 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this,User_Registration.class));
             }
         });
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,SubmissionActivity.class));
-            }
-        });
+
 
 
 
