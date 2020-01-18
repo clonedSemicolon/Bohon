@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<ImageView
+    android:id="@+id/ivFlag"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    app:srcCompat="@mipmap/ic_launcher" />
+
+<TextView
+    android:id="@+id/tvPopulation"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/tvName"
+    android:layout_toEndOf="@+id/ivFlag"
+    android:layout_toRightOf="@+id/ivFlag"
+    android:padding="5dp"
+    android:text="TextView"
+    android:textStyle="bold" />
+
+<TextView
+    android:id="@+id/tvName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toEndOf="@+id/ivFlag"
+    android:layout_toRightOf="@+id/ivFlag"
+    android:padding="5dp"
+    android:text="TextView"
+    android:textColor="@color/colorAccent"
+    android:textSize="20sp"
+    android:textStyle="italic" />
+</RelativeLayout>

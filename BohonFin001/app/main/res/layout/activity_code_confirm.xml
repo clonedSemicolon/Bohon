@@ -12,8 +12,8 @@
 
     <EditText
         android:id="@+id/ConfirmCode"
-        android:layout_width="393dp"
-        android:layout_height="52dp"
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="430dp"
         android:background="@drawable/confirmedit"
@@ -25,9 +25,9 @@
 
     <Button
         android:id="@+id/ConfirmButton"
-        android:layout_width="145dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
+        android:layout_width="127dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="110dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/confirmbutton"
         android:gravity="center"
@@ -35,5 +35,11 @@
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/testbutton"
+        android:layout_width="108dp"
+        android:layout_height="65dp"
+        android:text="Button" />
 
 </LinearLayout>

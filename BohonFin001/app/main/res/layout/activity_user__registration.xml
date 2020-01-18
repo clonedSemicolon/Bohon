@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/relativeLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/userregscreen"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/NameReg"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="390dp"
+        android:background="@drawable/registrationedittext"
+        android:hint=""
+        android:inputType="phone"
+        android:textAlignment="center"
+        android:textSize="30dp" />
+
+
+    <EditText
+        android:id="@+id/EmailReg"
+        android:layout_width="350dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/registrationedittext"/>
+
+    <EditText
+        android:id="@+id/phonereg"
+        android:layout_width="350dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/registrationedittext"/>
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/registerbutton" />
+
+</LinearLayout>
