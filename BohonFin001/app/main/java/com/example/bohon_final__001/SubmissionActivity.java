@@ -27,11 +27,15 @@ public class SubmissionActivity extends AppCompatActivity {
     int[] spinnerImages;
     Spinner mSpinner;
     private boolean isUserInteracting;
+    Button vehicleselectbutton;
+    String VehicleType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submission);
+
+        vehicleselectbutton=findViewById(R.id.vehicleselectbutton);
 
         mSpinner = (Spinner) findViewById(R.id.spinner);
         spinnerTitles = new String[]{"Pickup", "Truck"};
@@ -48,6 +52,7 @@ public class SubmissionActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (isUserInteracting) {
                     Toast.makeText(SubmissionActivity.this, spinnerTitles[i], Toast.LENGTH_SHORT).show();
+                    VehicleType=spinnerTitles[i];
                 }
             }
             @Override
@@ -56,6 +61,18 @@ public class SubmissionActivity extends AppCompatActivity {
             }
         });
 
+        vehicleselectbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent locationactivityintent = new Intent(SubmissionActivity.this, SqlitemainActivity.class);
+                locationactivityintent.putExtra("vehicleType", VehicleType);
+                startActivity(locationactivityintent);
+            }
+        });
+
+
+
+
     }
 
     @Override
@@ -63,4 +80,6 @@ public class SubmissionActivity extends AppCompatActivity {
         super.onUserInteraction();
         isUserInteracting = true;
     }
+
+
 }

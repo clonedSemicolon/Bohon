@@ -22,6 +22,9 @@ public class SqlitemainActivity extends AppCompatActivity {
     Button selectbtn;
     EditText inputLabel;
 
+
+    String pickdistrict,pickarea,destdistrict,destarea,vehicletype;
+
     ArrayList<String>disarray;
     ArrayAdapter<String>disarray_adapter;
 
@@ -45,6 +48,8 @@ public class SqlitemainActivity extends AppCompatActivity {
 
         selectbtn=findViewById(R.id.selectbutton);
 
+        String vehicletype=getIntent().getStringExtra("vehicleType");
+
         disarray=new ArrayList<>();
         disarray.add("Sylhet");
         disarray.add("Sunamgonj");
@@ -61,11 +66,6 @@ public class SqlitemainActivity extends AppCompatActivity {
         sylhet.add("Dakshin Surma");
         sylhet.add("Moglabazar");
         sylhet.add("Kanaighat");
-        sylhet.add("Companiganj");
-        sylhet.add("Gowainghat");
-        sylhet.add("Zakiganj");
-        sylhet.add("Balaganj");
-        sylhet.add("Beanibazar");
         sylhet.add("Bishwanath");
 
 
@@ -74,12 +74,8 @@ public class SqlitemainActivity extends AppCompatActivity {
         sunamgonj.add("Chhatak");
         sunamgonj.add("Jagannathpur");
         sunamgonj.add("Jamalganj");
-        sunamgonj.add("Tahirpur");
         sunamgonj.add("Derai");
-        sunamgonj.add("Dowarabazar");
-        sunamgonj.add("Dharampasha");
-        sunamgonj.add("Sulla");
-        sunamgonj.add("Bishwambarpur");
+
 
 
         moulovibazar=new ArrayList<>();
@@ -88,7 +84,7 @@ public class SqlitemainActivity extends AppCompatActivity {
         moulovibazar.add("Moulovibazar Sadar");
         moulovibazar.add("Rajnagar");
         moulovibazar.add("Sreemongol");
-        moulovibazar.add("Kamalganj");
+
 
 
 
@@ -99,6 +95,9 @@ public class SqlitemainActivity extends AppCompatActivity {
         habiganj.add("Chunarughat");
         habiganj.add("Habiganj Sadar");
 
+
+
+
         pickupspinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -106,21 +105,25 @@ public class SqlitemainActivity extends AppCompatActivity {
                 if(i==0)
                 {
                     area=new ArrayAdapter<>(getApplicationContext(),android.R.layout.simple_spinner_item,sylhet);
+
                 }
 
                 if(i==1)
                 {
                     area=new ArrayAdapter<>(getApplicationContext(),android.R.layout.simple_spinner_item,sunamgonj);
+
                 }
 
                 if(i==2)
                 {
                     area=new ArrayAdapter<>(getApplicationContext(),android.R.layout.simple_spinner_item,moulovibazar);
+
                 }
 
                 if(i==3)
                 {
                     area=new ArrayAdapter<>(getApplicationContext(),android.R.layout.simple_spinner_item,habiganj);
+
                 }
 
 
@@ -133,6 +136,8 @@ public class SqlitemainActivity extends AppCompatActivity {
 
             }
         });
+
+
 
 
 
@@ -179,9 +184,21 @@ public class SqlitemainActivity extends AppCompatActivity {
 
 
         selectbtn.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SqlitemainActivity.this,SubmissionActivity.class));
+                pickdistrict=pickupspinner1.getSelectedItem().toString();
+                pickarea=String.valueOf(pickupspinner2.getSelectedItem());
+                destdistrict=destspinner1.getSelectedItem().toString();
+                destarea=destspinner2.getSelectedItem().toString();
+                Intent submissionintent=new Intent(SqlitemainActivity.this,FinalRequestActivity.class);
+                submissionintent.putExtra("pickd",pickdistrict);
+                submissionintent.putExtra("picka",pickarea);
+                submissionintent.putExtra("desd",destdistrict);
+                submissionintent.putExtra("desa",destarea);
+                submissionintent.putExtra("vtype",vehicletype);
+                startActivity(submissionintent);
             }
         });
 

@@ -48,7 +48,7 @@ public class CodeConfirm extends AppCompatActivity {
         test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(CodeConfirm.this,SqlitemainActivity.class));
+                startActivity(new Intent(CodeConfirm.this,SubmissionActivity.class));
             }
         });
 

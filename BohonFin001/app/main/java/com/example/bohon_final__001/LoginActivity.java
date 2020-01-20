@@ -43,10 +43,13 @@ public class LoginActivity extends AppCompatActivity {
                     LoginPhone.requestFocus();
                 }
 
-                String PhoneNumber="+88"+number;
-                Intent firstintent=new Intent(LoginActivity.this,CodeConfirm.class);
-                firstintent.putExtra("PhoneNumber",PhoneNumber);
-                startActivity(firstintent);
+                else {
+
+                    String PhoneNumber = "+88" + number;
+                    Intent firstintent = new Intent(LoginActivity.this, CodeConfirm.class);
+                    firstintent.putExtra("PhoneNumber", PhoneNumber);
+                    startActivity(firstintent);
+                }
             }
         });
 
