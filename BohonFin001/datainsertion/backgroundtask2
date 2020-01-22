@@ -47,7 +47,7 @@ public class BackgroundTask2 extends AsyncTask<String,Void,String> {
                     URLEncoder.encode("pickupdis", "UTF-8") + "=" + URLEncoder.encode(pickupdis, "UTF-8") + "&" +
                     URLEncoder.encode("pickuparea", "UTF-8") + "=" + URLEncoder.encode(pickuparea, "UTF-8") + "&"+
                     URLEncoder.encode("desdis", "UTF-8") + "=" + URLEncoder.encode(desdis, "UTF-8") + "&"+
-                    URLEncoder.encode("desarea ", "UTF-8") + "=" + URLEncoder.encode(desarea, "UTF-8") + "&"+
+                    URLEncoder.encode("desarea", "UTF-8") + "=" + URLEncoder.encode(desarea, "UTF-8") + "&"+
                     URLEncoder.encode("transporttype", "UTF-8") + "=" + URLEncoder.encode(transporttype, "UTF-8") + "&";
             bufferedWriter.write(data);
             bufferedWriter.flush();
