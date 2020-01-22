@@ -49,6 +49,7 @@ public class SqlitemainActivity extends AppCompatActivity {
         selectbtn=findViewById(R.id.selectbutton);
 
         String vehicletype=getIntent().getStringExtra("vehicleType");
+        String phoneno=getIntent().getStringExtra("phoneno");
 
         disarray=new ArrayList<>();
         disarray.add("Sylhet");
@@ -198,6 +199,7 @@ public class SqlitemainActivity extends AppCompatActivity {
                 submissionintent.putExtra("desd",destdistrict);
                 submissionintent.putExtra("desa",destarea);
                 submissionintent.putExtra("vtype",vehicletype);
+                submissionintent.putExtra("ptype",phoneno);
                 startActivity(submissionintent);
             }
         });

@@ -28,7 +28,7 @@ public class SubmissionActivity extends AppCompatActivity {
     Spinner mSpinner;
     private boolean isUserInteracting;
     Button vehicleselectbutton;
-    String VehicleType;
+    String VehicleType,phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,11 +61,14 @@ public class SubmissionActivity extends AppCompatActivity {
             }
         });
 
+        phone=getIntent().getStringExtra("phoneno");
+
         vehicleselectbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent locationactivityintent = new Intent(SubmissionActivity.this, SqlitemainActivity.class);
                 locationactivityintent.putExtra("vehicleType", VehicleType);
+                locationactivityintent.putExtra("phoneno",phone);
                 startActivity(locationactivityintent);
             }
         });

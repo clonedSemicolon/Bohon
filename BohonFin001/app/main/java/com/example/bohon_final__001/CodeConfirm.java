@@ -29,6 +29,7 @@ public class CodeConfirm extends AppCompatActivity {
     private String VerificationCode;
     Button confirmbutton,test;
     private FirebaseAuth mAuth;
+    String code,PhoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,26 +39,21 @@ public class CodeConfirm extends AppCompatActivity {
         Otpverify = (EditText) findViewById(R.id.ConfirmCode);
         test=(Button)findViewById(R.id.testbutton);
         mAuth= FirebaseAuth.getInstance();
-        String PhoneNumber = getIntent().getStringExtra("PhoneNumber");
+        PhoneNumber = getIntent().getStringExtra("PhoneNumber");
 
 
         SendVerificationCode(PhoneNumber);
         
         confirmbutton=(Button)findViewById(R.id.ConfirmButton);
 
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(CodeConfirm.this,SubmissionActivity.class));
-            }
-        });
+
 
 
         
         confirmbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String code=Otpverify.getText().toString().trim();
+                 code=Otpverify.getText().toString().trim();
 
                 if(code.isEmpty() || code.length()<6)
                 {
@@ -90,6 +86,7 @@ public class CodeConfirm extends AppCompatActivity {
                 if(task.isSuccessful())
                 {
                     Intent WorkingSwitch=new Intent(CodeConfirm.this,Current_Location.class);
+                    WorkingSwitch.putExtra("Phone",PhoneNumber);
                     WorkingSwitch.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(WorkingSwitch);
                 }

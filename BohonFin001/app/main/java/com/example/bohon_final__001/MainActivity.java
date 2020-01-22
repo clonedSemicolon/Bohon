@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import com.varunest.sparkbutton.SparkButton;
@@ -19,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         SparkButton sparkButton=(SparkButton)findViewById(R.id.spark_button);
+
+
 
 
         sparkButton.setOnClickListener(new View.OnClickListener() {

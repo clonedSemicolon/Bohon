@@ -3,87 +3,49 @@ package com.example.bohon_final__001;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+
+import androidx.annotation.Nullable;
+
 
 public class DatabaseHandler extends SQLiteOpenHelper {
-    private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "spinnerExample3";
-    private static final String TABLE_NAME = "labels";
-    private static final String COLUMN_ID = "id";
-    private static final String COLUMN_NAME = "name";
+    private static final String DATABASE_NAME = "User.db";
+    private static final String TABLE_NAME = "user";
 
-    public DatabaseHandler(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    private static final  int VERSION_NUMBER = 400 ;
+    private Context context;
+    public DatabaseHandler(@Nullable Context context ) {
+        super(context,DATABASE_NAME , null , VERSION_NUMBER);
+        this.context = context ;
     }
 
-    // Creating Tables
     @Override
-    public void onCreate(SQLiteDatabase db) {        // Category table create query
-        String CREATE_ITEM_TABLE = "CREATE TABLE " + TABLE_NAME + "("
-                + COLUMN_ID + " INTEGER PRIMARY KEY," + COLUMN_NAME + " TEXT)";
-        db.execSQL(CREATE_ITEM_TABLE);
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE " +TABLE_NAME +"(email VARCHAR(25) PRIMARY KEY , password VARCHAR(20),phone VARCHAR(20),name VARCHAR(20) )");
     }
 
-    // Upgrading database
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Drop older table if existed
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-
-        // Create tables again
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
         onCreate(db);
     }
-
-    Map<String,Integer> map=new HashMap<String,Integer>();
-
-    /**
-     * Inserting new lable into lables table
-     * */
-    public void insertLabel(String label){
-
+    public boolean insert(String email,String name,String phone) {
         SQLiteDatabase db = this.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_NAME, label);//column name, column value
-
-        // Inserting Row
-        db.insert(TABLE_NAME, null, values);//tableName, nullColumnHack, CotentValues
-        db.close(); // Closing database connection
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("email",email);
+        contentValues.put("name",name);
+        contentValues.put("phone",phone);
+        long ins = db.insert("user",null,contentValues);
+        if ( ins == -1) return false ;
+        else return true ;
     }
-
-    public boolean checkEmpty(SQLiteDatabase db, String table){
-        return DatabaseUtils.queryNumEntries(db, table) == 0;
-    }
-
-    /**
-     * Getting all labels
-     * returns list of labels
-     * */
-    public List<String> getAllLabels(){
-        List<String> list = new ArrayList<String>();
-
-        // Select All Query
-        String selectQuery = "SELECT  * FROM " + TABLE_NAME;
-
+    public boolean chkemail(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, null);//selectQuery,selectedArguments
-
-        // looping through all rows and adding to list
-        if (cursor.moveToFirst()) {
-            do {
-                list.add(cursor.getString(1));//adding 2nd column data
-            } while (cursor.moveToNext());
-        }
-        // closing connection
-        cursor.close();
-        db.close();
-        // returning lables
-        return list;
+        Cursor cursor = db.rawQuery("select * from user where email=?",new String[]{email});
+        if (cursor.getCount() > 0) return false ;
+        else return true ;
     }
+
 }

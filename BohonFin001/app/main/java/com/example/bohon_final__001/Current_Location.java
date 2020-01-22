@@ -43,8 +43,9 @@ public class Current_Location extends FragmentActivity implements OnMapReadyCall
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
     GoogleMap map;
+    String PhoneNo=getIntent().getStringExtra("Phone");
     SupportMapFragment mapFragment;
-    SearchView searchView;
+    SearchView searchView,searchView2;
     Button locationconfirmbutton;
     private static final int REQUEST_CODE = 101;
     @Override
@@ -53,17 +54,59 @@ public class Current_Location extends FragmentActivity implements OnMapReadyCall
         setContentView(R.layout.activity_current__location);
 
         searchView=(SearchView)findViewById(R.id.search_location);
+        searchView2=(SearchView)findViewById(R.id.search_location2);
         mapFragment=(SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.Cmap);
         locationconfirmbutton=(Button)findViewById(R.id.locationconfirmbutton);
 
         locationconfirmbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Current_Location.this,SubmissionActivity.class));
+                Intent nextintent=new Intent(Current_Location.this,SubmissionActivity.class);
+                nextintent.putExtra("phoneno",PhoneNo);
+                startActivity(nextintent);
             }
         });
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                String searchinitlocation=searchView.getQuery().toString();
+
+                List<Address> addressList=null;
+
+                if(searchinitlocation!=null && !searchinitlocation.equals(""))
+                {
+                    Geocoder geocoder=new Geocoder(Current_Location.this);
+
+                    try
+                    {
+                        addressList=geocoder.getFromLocationName(searchinitlocation,1);
+                    }
+                    catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+
+                    Address address=addressList.get(0);
+                    LatLng latLng=new LatLng(address.getLatitude(),address.getLongitude());
+                    map.addMarker(new MarkerOptions().position(latLng).title(searchinitlocation));
+                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,10));
+                }
+
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
+            }
+        });
+
+
+        //Destination
+
+        searchView2.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
                 String searchinitlocation=searchView.getQuery().toString();

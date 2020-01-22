@@ -43,23 +43,30 @@ public class FinalRequestActivity extends AppCompatActivity {
         fspinner=findViewById(R.id.feetspinner);
 
 
+        String phone=getIntent().getStringExtra("ptype");
+        String pickupdis=getIntent().getStringExtra("pickd");
+        String pickuparea=getIntent().getStringExtra("picka");
+        String desdis=getIntent().getStringExtra("desd");
+        String desarea=getIntent().getStringExtra("desa");
+        String transporttype=getIntent().getStringExtra("vtype");
+
+
+
+        TextView userphoneno;
+        userphoneno=findViewById(R.id.phonenotext);
+        userphoneno.setText(phone);
 
 
         TextView sourceloc;
         sourceloc=findViewById(R.id.sourceloc);
-        String pickupdis=getIntent().getStringExtra("pickd");
-        String pickuparea=getIntent().getStringExtra("picka");
         sourceloc.setText(pickupdis+",\n"+pickuparea);
 
         TextView desloc;
         desloc=findViewById(R.id.destinationloc);
-        String desdis=getIntent().getStringExtra("desd");
-        String desarea=getIntent().getStringExtra("desa");
         desloc.setText(desdis+",\n"+desarea);
 
         TextView transport;
         transport=findViewById(R.id.typevehicle);
-        String transporttype=getIntent().getStringExtra("vtype");
         transport.setText(transporttype);
 
 
