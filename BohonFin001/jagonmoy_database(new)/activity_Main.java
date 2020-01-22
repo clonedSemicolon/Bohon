@@ -21,16 +21,19 @@ public class MainActivity extends Activity {
 
 
     }
-    public void userReg(View view) {
+    
+   public void userReg(View view) {
         name = nameText.getText().toString();
         email = emailText.getText().toString();
         phone = phoneText.getText().toString();
 
-        String method = "register";
-        BackgroundTask backgroundTask = new BackgroundTask(this);
-        backgroundTask.execute(method,email,name,phone);
-        finish();
-
+        if ( name.isEmpty() || email.isEmpty() || phone.isEmpty()) { Toast.makeText(this,"Fields Are Empty !! Please insert carefully",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            String method = "register";
+            BackgroundTask backgroundTask = new BackgroundTask(this);
+             backgroundTask.execute(method, email, name, phone);
+        }
 
     }
 }
